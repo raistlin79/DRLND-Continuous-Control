@@ -58,5 +58,5 @@ To run the environment please use the following information:
     Linux (x86, headless): "path/to/Reacher_Linux_NoVis/Reacher.x86"
     Linux (x86_64, headless): "path/to/Reacher_Linux_NoVis/Reacher.x86_64"
     
- For a Windows x64 system putting Reacher folder right into you Jupyter notebook folder, this should be the resulting statement.
+ For a Windows x64 system putting Reacher folder right into you Jupyter notebook folder, this should be the resulting statement. <br>
  ```env = UnityEnvironment(file_name='Reacher_Windows_x86_64/Reacher.exe')```
