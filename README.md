@@ -1,5 +1,5 @@
 # DRLND - Continuous-Control
-Second project in the Deep Reinforcement Learning Nanodegree. 
+## Second project in the Deep Reinforcement Learning Nanodegree. 
 
 For this project, you will work with the Reacher environment.
 
