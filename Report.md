@@ -6,14 +6,14 @@ The report at hand shall provide an overview of the applied algorithms as well a
 # Learning Algorithm
 
 I choose to solve this project following the Deep Deterministic Policy Gradients (DDPG) approach. The solution is based on the code introduced during the course.
-<br>
+
 As a specialty I implemented the Actor model using a Dueling Network approach. This was in the beginning not very efficient but after a hint to normalize the input values performance increased significantly.
-<br>
+
 Tuning the parameters resulted in the following configuration but was a rather time consuming effort. I found that using the hyperparameter suggested in "CONTINUOUS  CONTROL  WITH  DEEP  REINFORCEMENT LEARNING" (https://arxiv.org/pdf/1509.02971.pdf) had not the best results with my model. For example a Weight_DECAY of 0.0001 made learning almost impossible.
-<br>
+
+ The following hyper parameters are used:
 
 ```
- The following hyper parameters are used:
   BUFFER_SIZE = int(1e6)  # replay buffer size
   BATCH_SIZE = 256        # minibatch size
   GAMMA = 0.99            # discount factor
@@ -67,7 +67,6 @@ Simple network with two hidden layers that maps (state, action) pairs -> Q-value
   self.fc3 = nn.Linear(fc2_units, 1)
 ```
 
-
 # Plot of Rewards
 A plot of reward is calculated every time you train the agent using `Continuous_Control.ipynb`.
 <br>
@@ -76,11 +75,11 @@ With the parameter set given above the DDPG Agent solved the environment after 4
 <br>
 The corresponding model weights are stored in `ddpg_network_actor_weight.pth` and `ddpg_network_critic_weight.pth`.
 
-
-
 # Ideas for Future Work
-In this project I concentrated on a augmented version of the DDPG approach but still there are plenty of opportunities to simply improve the performance parameters. Another opportunity would be to work with the `Noise-Function` for example implementing an adaptive approach.
-<br>
+In this project I concentrated on a augmented version of the DDPG approach but still there are plenty of opportunities to simply improve the performance parameters. Another general option would be to work with the `Noise-Function` for example implementing an adaptive approach. 
+
+Looking at the learning curve specifically (including the 391 episode solution) shows, that it takes the agent 280 -290 episodes to reach an average value of +10. From +10 to +30 takes only 100 episodes and the agent is not droping below an average of 30 anymore. So an efficient improvement approach has to enhance learning accelartion at the beginning. I am still looking for a good idea.
+
 Of course it would be interesting in measuring the performance of DDPG against other policy based approaches or even try to combine them.
 
 2018-11-13
